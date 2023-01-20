@@ -1,20 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { StatusBar } from 'react-native';
+import { ThemeProvider } from 'styled-components';
+import { Header } from './src/components/Header';
+import { PokemonModal } from './src/screens/PokemonModal';
+import { Pokemons } from './src/screens/Pokemons';
+import { AppContainer, AppContent } from './styles/GlobalStyles';
+import { theme } from './styles/Theme';
+import { SelectedPokemonContextProvider } from './utils/contexts/SelectedPokemonContext/SelectedPokemonContext';
 
-export default function App() {
+const App = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const handleOpenModal = isOpen => {
+    setModalVisible(isOpen);
+  };
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={theme}>
+      <SelectedPokemonContextProvider>
+        <AppContainer>
+          <StatusBar backgroundColor={theme.colors.secondary} />
+          <Header />
+          <AppContent>
+            <Pokemons handleOpen={handleOpenModal} />
+            <PokemonModal isOpen={modalVisible} handleOpen={handleOpenModal} />
+          </AppContent>
+        </AppContainer>
+      </SelectedPokemonContextProvider>
+    </ThemeProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
