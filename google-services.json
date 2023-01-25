@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "7889166910",
+    "project_id": "pokedex-rn-17c34",
+    "storage_bucket": "pokedex-rn-17c34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7889166910:android:2d64345a570b65807e676f",
+        "android_client_info": {
+          "package_name": "pokedex.reactnative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7889166910-e20svepi9r4qs42l3fcuibvotqf6gb2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSvDg2IUi_bnH92MruQ5yN9HHcBRdRDLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7889166910-e20svepi9r4qs42l3fcuibvotqf6gb2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
